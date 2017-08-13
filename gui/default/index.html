@@ -332,8 +332,8 @@
                           <span class="fa fa-files-o"></span>&nbsp;{{model[folder.id].localFiles | alwaysNumber}}&ensp;
                           <span class="fa fa-folder-o"></span>&nbsp;{{model[folder.id].localDirectories | alwaysNumber}}&ensp;
                           <span class="fa fa-hdd-o"></span>&nbsp;~{{model[folder.id].localBytes | binary}}B
-                          <span ng-if="model[folder.id].ignorePatterns"><br/><i><small translate class="text-muted">Reduced by ignore patterns</small></i></span>
-                        </span>
+                          <span ng-if="model[folder.id].ignorePatterns"><br/><i><a href=""  ng-click="editingExisting ? editIgnores(folder.id) : editIgnoresOnAddingFolder(folder.id)" ng-disabled="folderEditor.$invalid"><small translate class="text-muted">Reduced by ignore patterns</small></a></i></span>
+                        </span>                        
                       </td>
                     </tr>
                     <tr ng-if="neededItems(folder.id) > 0">
